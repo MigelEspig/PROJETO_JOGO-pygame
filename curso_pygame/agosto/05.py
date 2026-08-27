@@ -1,9 +1,9 @@
 import pygame
 pygame.init()
 tela = pygame.display.set_mode((800, 450))
-x_cubo = 380
-y_cubo = 205
-x_circulo = 400
+x_cubo = 250
+y_cubo = 225
+x_circulo = 550
 y_circulo = 225
 vel_cubo = 1
 vel_circulo = 1.5
