@@ -8,6 +8,7 @@ jogador = pygame.Rect(100, 180, 45, 45)
 obstaculo = pygame.Rect(420, 130, 100, 170)
 area_tela = tela.get_rect()
 rodando = True
+obstaculo_existe = True
 
 while rodando:
 
@@ -36,16 +37,18 @@ while rodando:
 
     # Verifica se o jogador está encostando no obstáculo
     if jogador.colliderect(obstaculo):
-        cor_jogador = (255, 90, 90)
+        obstaculo_existe = False
     else:
         cor_jogador = (70, 150, 255)
 
     # Desenha a tela
     tela.fill((30, 30, 30))
 
+    
     pygame.draw.rect(tela, cor_jogador, jogador)
 
-    pygame.draw.rect(tela, (110, 110, 125), obstaculo)
+    if obstaculo_existe: 
+        pygame.draw.rect(tela, (110, 110, 125), obstaculo)
 
     pygame.display.flip()
 
