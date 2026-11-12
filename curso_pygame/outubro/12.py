@@ -103,7 +103,6 @@ def Gerar_maicon(desenho, cor):
                 ))
     return imagem_maicon
 
-
 # 4. MONTAR A FORMACAO
 
 def criar_frota():
