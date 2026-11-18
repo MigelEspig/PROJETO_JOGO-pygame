@@ -139,10 +139,19 @@ while rodando:
         tiro.y -= 9
         if tiro.bottom < 0:
             tiros.remove(tiro)
+        
     velocidade = 100
     direcao, resto_x = mover_frota(
         inimigos, direcao, resto_x, velocidade, dt
     )
+
+    for tiro in tiros[:]:
+        for alien in inimigos[:]:
+            if tiro.colliderect(alien):
+                tiros.remove(tiro) 
+                inimigos.remove(alien)
+                 
+                break
 
     # DESENHAR: limpar a tela antes de redesenhar os objetos
     tela.fill(COR_FUNDO)
@@ -165,4 +174,5 @@ while rodando:
         texto = fonte.render(mensagem, True, COR_TEXTO)
         tela.blit(texto, (20, 465))
     pygame.display.flip()
+    
 pygame.quit()
